@@ -11,7 +11,6 @@
 
 <br>
 
-
 ### Step 3: Config ORM !
 
 <br>
@@ -34,3 +33,9 @@
 &emsp;&emsp;},<br>
 &emsp;]<br>
 }
+
+<br>
+
+### Step 4: Build the API !
+
+>`npm run init_orm  `
