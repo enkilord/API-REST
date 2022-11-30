@@ -1,0 +1,73 @@
+{
+    "tables": [
+        {
+            "name": "Roles",
+            "parameters": [
+                {
+                    "name": "name",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "parameters": [
+                {
+                    "name": "role_id",
+                    "type": "int",
+                    "nullable": false,
+                    "foreign_key": "Roles"
+                },
+                {
+                    "name": "username",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                },
+                {
+                    "name": "password",
+                    "type": "varchar(225)",
+                    "nullable": false,
+                    "foreign_key": ""
+                },
+                {
+                    "name": "email",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                },
+                {
+                    "name": "adresse",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                }
+            ]
+        },
+        {
+            "name": "Products",
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "type": "int",
+                    "nullable": false,
+                    "foreign_key": "Users"
+                },
+                {
+                    "name": "name",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                },
+                {
+                    "name": "price",
+                    "type": "varchar(100)",
+                    "nullable": false,
+                    "foreign_key": ""
+                }
+            ]
+        }
+    ]
+}
