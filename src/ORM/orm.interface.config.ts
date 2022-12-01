@@ -9,7 +9,8 @@ export interface Table {
 
 export interface Parameter {
     name: string,
-    type: string,
+    db_type: string,
+    js_type: string,
     nullable: boolean,
     foreign_key: string
 };

@@ -1,4 +1,4 @@
-import { DB_Parameter } from './interface.parameter';
+import { DB_Parameter } from './../fixtures/interface.fixture';
 
 export const insertQuery = (tableName: string, parameters: DB_Parameter[]) => {
     var params = '';

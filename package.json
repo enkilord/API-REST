@@ -5,7 +5,7 @@
   "main": "./main.ts",
   "scripts": {
     "start": "ts-node ./src/main.ts",
-    "init_orm": "export $(cat .env | xargs) && ts-node ./src/manager.orm/orm.initialize.ts",
+    "init_orm": "export $(cat .env | xargs) && ts-node ./src/ORM/orm.initialize.ts",
     "test": "testme"
   },
   "author": "Victor Santos de Bustamante",

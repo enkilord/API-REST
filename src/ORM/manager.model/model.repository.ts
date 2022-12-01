@@ -9,7 +9,7 @@ export class ModelRepository {
         this.model = model;
     }
 
-    findById = (id: number) => {
-        const query = selectQuery()
-    };
+    // findById = (id: number) => {
+    //     const query = selectQuery()
+    // };
 }

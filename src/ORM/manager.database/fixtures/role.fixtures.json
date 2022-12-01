@@ -1,0 +1,18 @@
+[
+    {
+        "parameters": [
+            {
+                "name": "name",
+                "value": "ROLE_ADMIN"
+            }
+        ]
+    },
+    {
+        "parameters": [
+            {
+                "name": "name",
+                "value": "ROLE_USER"
+            }
+        ]
+    }
+]

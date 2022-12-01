@@ -1,4 +1,4 @@
-import { Table } from '../../manager.orm/orm.interface.config';
+import { Table } from '../../orm.interface.config';
 
 export const createTableQuery = (table: Table): string => {
     var hasKeys = false;
@@ -6,7 +6,7 @@ export const createTableQuery = (table: Table): string => {
     var keys = '';
 
     table.parameters.forEach((parameter) => {
-        query += `${parameter.name} ${parameter.type} ${!parameter.nullable ? 'NOT NULL' : ''}, `;
+        query += `${parameter.name} ${parameter.db_type} ${!parameter.nullable ? 'NOT NULL' : ''}, `;
         if (parameter.foreign_key !== '') keys += `FOREIGN KEY (${parameter.name}) REFERENCES ${parameter.foreign_key}(id), `;
     });
 

@@ -6,7 +6,7 @@ import bodyParser from 'body-parser';
 import * as path from 'path';
 // import routes from './api/routes';
 // import errorHandler from './api/middlewares/error-handler.middleware';
-import * as dbConn from './manager.database/mysql.connector';
+import * as dbConn from './ORM/manager.database/mysql.connector';
 
 const app = express();
 const port = 3000;

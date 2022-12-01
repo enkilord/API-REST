@@ -5,7 +5,8 @@
             "parameters": [
                 {
                     "name": "name",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 }
@@ -16,31 +17,36 @@
             "parameters": [
                 {
                     "name": "roleId",
-                    "type": "int",
+                    "db_type": "int",
+                    "js_type": "number",
                     "nullable": false,
-                    "foreign_key": "Roles"
+                    "foreign_key": "Role"
                 },
                 {
                     "name": "username",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 },
                 {
                     "name": "password",
-                    "type": "varchar(225)",
+                    "db_type": "varchar(225)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 },
                 {
                     "name": "email",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 },
                 {
                     "name": "adresse",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 }
@@ -51,19 +57,22 @@
             "parameters": [
                 {
                     "name": "userId",
-                    "type": "int",
+                    "db_type": "int",
+                    "js_type": "number",
                     "nullable": false,
-                    "foreign_key": "Users"
+                    "foreign_key": "Product"
                 },
                 {
                     "name": "name",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 },
                 {
                     "name": "price",
-                    "type": "varchar(100)",
+                    "db_type": "varchar(100)",
+                    "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
                 }
