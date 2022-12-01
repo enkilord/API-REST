@@ -1,4 +1,4 @@
-import { Table } from '../interface.orm.config'
+import { Table } from '../../manager.orm/orm.interface.config'
 
 export const dropTableQuery = (table: Table): string => {
     var query = `DROP TABLE ${table.name}`;

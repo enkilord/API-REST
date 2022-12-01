@@ -1,7 +1,7 @@
 {
     "tables": [
         {
-            "name": "Roles",
+            "name": "Role",
             "parameters": [
                 {
                     "name": "name",
@@ -12,10 +12,10 @@
             ]
         },
         {
-            "name": "Users",
+            "name": "User",
             "parameters": [
                 {
-                    "name": "role_id",
+                    "name": "roleId",
                     "type": "int",
                     "nullable": false,
                     "foreign_key": "Roles"
@@ -47,10 +47,10 @@
             ]
         },
         {
-            "name": "Products",
+            "name": "Product",
             "parameters": [
                 {
-                    "name": "user_id",
+                    "name": "userId",
                     "type": "int",
                     "nullable": false,
                     "foreign_key": "Users"

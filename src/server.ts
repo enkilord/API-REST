@@ -14,8 +14,6 @@ const port = 3000;
 // create database pool
 dbConn.init();
 
-app.use(bodyParser.json());
-
 // serve static files
 app.use(express.static(path.join(__dirname, '../public')));
 
