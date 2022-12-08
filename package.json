@@ -4,7 +4,7 @@
   "description": "express api template",
   "main": "./main.ts",
   "scripts": {
-    "start": "ts-node ./src/main.ts",
+    "start": "ts-node ./src/server.ts",
     "init_orm": "export $(cat .env | xargs) && ts-node ./src/ORM/orm.initialize.ts",
     "test": "testme"
   },
@@ -17,6 +17,7 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "helmet": "^6.0.1",
+    "jsonwebtoken": "^8.5.1",
     "mysql": "^2.18.1",
     "npm-watch": "^0.11.0"
   },

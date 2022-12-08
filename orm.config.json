@@ -40,14 +40,14 @@
                     "name": "email",
                     "db_type": "varchar(100)",
                     "js_type": "string",
-                    "nullable": false,
+                    "nullable": true,
                     "foreign_key": ""
                 },
                 {
                     "name": "adresse",
                     "db_type": "varchar(100)",
                     "js_type": "string",
-                    "nullable": false,
+                    "nullable": true,
                     "foreign_key": ""
                 }
             ]
@@ -60,7 +60,7 @@
                     "db_type": "int",
                     "js_type": "number",
                     "nullable": false,
-                    "foreign_key": "Product"
+                    "foreign_key": "User"
                 },
                 {
                     "name": "name",

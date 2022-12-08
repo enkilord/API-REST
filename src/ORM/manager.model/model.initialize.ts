@@ -5,7 +5,7 @@ import * as fs from 'fs'
 export const initializeModels = (tables: Table[]) => {
     tables.forEach((table) => {
         console.debug(`\ncreating model : ${table.name}\n`);
-        fs.writeFile(`src/model/${table.name}.ts`, createModelContent(table), (err) => {
+        fs.writeFile(`src/models/${table.name}.ts`, createModelContent(table), (err) => {
             if (err) throw err;
         });
     });

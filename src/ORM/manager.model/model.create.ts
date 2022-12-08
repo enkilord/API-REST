@@ -1,9 +1,5 @@
-import { mapParameter } from './interface.mapparameter';
 import { Table, Parameter } from '../orm.interface.config';
-
-const mapParameters: mapParameter[] = [];
-
-const indent = (): string => '    ';
+import { indent } from '../orm.utils';
 
 const getSetParameter = (parameter: Parameter): string =>
 `${indent()}set ${parameter.name}(${parameter.name}: ${parameter.js_type}) {\n` +
@@ -26,10 +22,7 @@ const getModelContent = (parameters: Parameter[]): string => {
     return modelContent;
 };
 
-export const createModelContent = (table: Table): string => {
-    const modelContent = 'import { Model } from "../manager.model/model"\n\n' + 
+export const createModelContent = (table: Table): string => 
+    'import { Model } from "../ORM/manager.model/model"\n\n' + 
     `export class ${table.name} extends Model {\n` +
     `${getModelContent(table.parameters)}}`;
-
-    return modelContent;
-};

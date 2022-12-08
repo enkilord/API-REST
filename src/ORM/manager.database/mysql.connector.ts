@@ -1,4 +1,4 @@
-import { createPool, Pool} from 'mysql';
+import { createPool, Pool, createConnection, Connection} from 'mysql';
 import { DATA_SOURCES } from '../../../vars.config';
 const dataSource = DATA_SOURCES.mySqlDataSource;
 
@@ -48,3 +48,15 @@ export const execute = <T>(query: string, params: string[] | Object | null): Pro
         throw new Error('failed to execute MySQL query');
     }
 }
+
+export const connection = createConnection({
+    host: dataSource.DB_HOST,
+    user: dataSource.DB_USER,
+    password: dataSource.DB_PASSWORD,
+    database: dataSource.DB_DATABASE,
+    port: dataSource.DB_PORT,
+});
+
+connection.connect(function(err) {
+    if (err) throw err;
+});

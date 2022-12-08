@@ -1,10 +1,10 @@
+import { routeManager } from './routes/route';
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import * as path from 'path';
-// import routes from './api/routes';
 // import errorHandler from './api/middlewares/error-handler.middleware';
 import * as dbConn from './ORM/manager.database/mysql.connector';
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 // enable all CORS request
 app.use(cors());
 
-// app.use('/api/', routes);
+app.use('/api/', routeManager);
 
 app.listen(port, () => {
     console.log(`Express app listening at http://localhost:${port}`)

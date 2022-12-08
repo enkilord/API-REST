@@ -7,5 +7,5 @@ export const selectQuery = (tableName: string, parameters: DB_Parameter[]) => {
         params += `${parameter.name} = ${parameter.value}, `;
     });
 
-    return `select * from ${tableName}${parameters.length !== 0 ? params.replace(/\,\s$/, ')') : ''}`;
+    return `select * from ${tableName}${parameters.length !== 0 ? params.replace(/\,\s$/, '') : ''}`;
 };

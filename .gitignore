@@ -1,2 +1,4 @@
 mysql
 node_modules
+src/models/*
+src/repositories/*
