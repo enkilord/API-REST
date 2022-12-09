@@ -1,62 +1,30 @@
-import { createPool, Pool, createConnection, Connection} from 'mysql';
+import { createPool, Pool, createConnection, Connection, Query } from 'mysql';
 import { DATA_SOURCES } from '../../../vars.config';
+
 const dataSource = DATA_SOURCES.mySqlDataSource;
-
-let pool: Pool;
-
-/**
- * generates pool connection to be used throughout the app
- */
-export const init = () => {
-    try {
-        pool = createPool({
-            connectionLimit: dataSource.DB_CONNECTION_LIMIT,
-            host: dataSource.DB_HOST,
-            user: dataSource.DB_USER,
-            password: dataSource.DB_PASSWORD,
-            database: dataSource.DB_DATABASE,
-            port: dataSource.DB_PORT,
-        });
-
-        console.debug('MySql Adapter Pool generated successfully\n');
-    } catch (error) {
-        console.error('[mysql.connector][init][Error]: ', error);
-        throw new Error('failed to initialized pool');
-    }
-};
+const conn = createConnection({
+        host: dataSource.DB_HOST,
+        user: dataSource.DB_USER,
+        password: dataSource.DB_PASSWORD,
+        database: dataSource.DB_DATABASE,
+        port: dataSource.DB_PORT,
+    });
 
 /**
- * executes SQL queries in MySQL db
+ * executes SQL queries in MySQL dbs
  *
  * @param {string} query - provide a valid SQL query
- * @param {string[] | Object} params - provide the parameterized values used
- * in the query
  */
-export const execute = <T>(query: string, params: string[] | Object | null): Promise<T> => {
-    try {
-        if (!pool) throw new Error('Pool was not created. Ensure pool is created when running the app.\n');
+export const execute = (query: string): Promise<any> => {
+    var res: any;
 
-        return new Promise<T>((resolve, reject) => {
-            pool.query(query, params, (error, results) => {
-                if (error) reject(error);
-                else resolve(results);
-            });
+    return new Promise<any>((resolve, reject) => {
+        conn.query(query, (err, result, fields) => {
+            if (err) {
+                return reject(err);
+            }
+
+            resolve(JSON.parse(JSON.stringify(result)));
         });
-
-    } catch (error) {
-        console.error('[mysql.connector][execute][Error]: ', error);
-        throw new Error('failed to execute MySQL query');
-    }
+    });
 }
-
-export const connection = createConnection({
-    host: dataSource.DB_HOST,
-    user: dataSource.DB_USER,
-    password: dataSource.DB_PASSWORD,
-    database: dataSource.DB_DATABASE,
-    port: dataSource.DB_PORT,
-});
-
-connection.connect(function(err) {
-    if (err) throw err;
-});

@@ -12,6 +12,4 @@ export const routeManager = (req: any, res: any, next: any) => {
     if (defaultRoutes.includes(req.url)) {
         defaultRoutesManager(req, res);
     }
-
-    next();
 }

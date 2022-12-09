@@ -2,29 +2,39 @@ import { debug } from 'console';
 import { User } from '../models/User';
 import { UserRepository } from '../repositories/User.repository';
 
-const register = (req: any, res: any) => {    
-    console.log(req.body);
-
+const register = async(req: any, res: any) => {    
     const userRepo = new UserRepository();
 
     const username = req.body.username;
 
-    const user: User = userRepo.findBy({name: 'username', value: username});
+    var user: User = await userRepo.findBy({name: 'username', value: username});
+
+    console.log(user);
+    
 
     if (user !== undefined) {
-        debug (user);
+        res.sendStatut()
     }
 
     if (req.body.password === undefined) {
         debug ('password missing');
     }
 
-    
+    user = new User(
+        2,
+        username,
+        req.body.password,
+        req.body.email,
+        req.body.adresse,
+        0
+    );
+
+    res.send(await userRepo.add(user));
 };
 
 const login = (req: any, res: any) => {    
     console.log(req.body);
-    
+
 };
 
 const getUsers = (req: any, res: any) => {    
@@ -35,7 +45,7 @@ const getUsers = (req: any, res: any) => {
 export const defaultRoutesManager = (req: any, res: any): any => {
     switch (req.url) {
         case '/register':
-            register(req, res)
+            register(req, res);
 
         case '/login':
             login(req, res);

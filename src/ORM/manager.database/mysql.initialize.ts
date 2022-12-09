@@ -11,7 +11,7 @@ const fixturesToLoad: string[] = [
 const populateDataBase = async(tables: Table[]) => {
     for (const table of tables) {
         const query = createTableQuery(table);
-        await dbConn.execute(query, []).then(() => console.debug(`\nquery :\n${query}\nexecuted\n`));
+        await dbConn.execute(query).then(() => console.debug(`\nquery :\n${query}\nexecuted\n`));
     }
 }
 
@@ -19,15 +19,12 @@ const loadFixtures = async() => {
     for (const fixtureToLoad of fixturesToLoad) {
         for (const fixtures of getFixtures(fixtureToLoad)) {
             const query = insertQuery(fixtureToLoad, fixtures.parameters);
-            await dbConn.execute(query, []).then(() => console.debug(`\nquery :\n${query}\nexecuted\n`));;
+            await dbConn.execute(query).then(() => console.debug(`\nquery :\n${query}\nexecuted\n`));;
         }
     }
 };
 
 export const initializeDataBase = async(tables: Table[]) => {
-    console.debug('===== 🏊‍ Initializing database pool 🏊‍ =====');
-    dbConn.init();
-
     console.debug('===== 🛩️ Populating database 🛩️ =====');
     await populateDataBase(tables);
 

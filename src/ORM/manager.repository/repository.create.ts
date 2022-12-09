@@ -27,7 +27,4 @@ const getImportContent = (tableName: string): string =>
 export const createRepositoryContent = (table: Table): string => 
     `${getImportContent(table.name)}\n` +
     `export class ${table.name}Repository {\n` +
-    `${indent()}constructor () {\n` +
-    `${indent()}${indent()}dbConn.init\n` +
-    `${indent()}}\n\n` +
     `${getRepositoryContent(table)}}`;

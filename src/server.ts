@@ -6,13 +6,9 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 import * as path from 'path';
 // import errorHandler from './api/middlewares/error-handler.middleware';
-import * as dbConn from './ORM/manager.database/mysql.connector';
 
 const app = express();
 const port = 3000;
-
-// create database pool
-dbConn.init();
 
 // serve static files
 app.use(express.static(path.join(__dirname, '../public')));

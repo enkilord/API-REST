@@ -1,5 +1,7 @@
 export abstract class Model {
-    get id(): number {
-        return this.id;
+    id: number;
+
+    constructor(id: number) {
+        this.id = id;
     }
 }
