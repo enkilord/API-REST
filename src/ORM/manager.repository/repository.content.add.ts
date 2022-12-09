@@ -1,4 +1,4 @@
-import { Table } from './../orm.interface.config';
+import { Table } from '../orm.interface.config';
 import { indent } from "../orm.utils";
 
 export const addModelContent = (tableName: string): string =>     

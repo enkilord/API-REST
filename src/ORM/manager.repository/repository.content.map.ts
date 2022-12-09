@@ -1,5 +1,5 @@
-import { Table } from './../orm.interface.config';
-import { indent } from './../orm.utils';
+import { Table } from '../orm.interface.config';
+import { indent } from '../orm.utils';
 
 export const mapModelContent = (table: Table): string => {
     var content = `${indent()}mapModelToDb = (model: ${table.name}): DB_Parameter[] =>\n` +

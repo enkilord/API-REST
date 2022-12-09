@@ -3,11 +3,11 @@ import { DATA_SOURCES } from '../../../vars.config';
 
 const dataSource = DATA_SOURCES.mySqlDataSource;
 const conn = createConnection({
-        host: dataSource.DB_HOST,
-        user: dataSource.DB_USER,
-        password: dataSource.DB_PASSWORD,
-        database: dataSource.DB_DATABASE,
-        port: dataSource.DB_PORT,
+        host: dataSource.HOST,
+        user: dataSource.USER,
+        password: dataSource.PASSWORD,
+        database: dataSource.DATABASE,
+        port: dataSource.PORT,
     });
 
 /**

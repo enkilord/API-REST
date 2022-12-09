@@ -1,5 +1,5 @@
-import { indent } from './../orm.utils';
-import { Table } from './../orm.interface.config';
+import { indent } from '../orm.utils';
+import { Table } from '../orm.interface.config';
 
 export const deleteModelContent = (tableName: string): string => 
     `${indent()}delete = async(model: ${tableName}): Promise<${tableName}> => {\n` +

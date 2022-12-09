@@ -1,11 +1,11 @@
-import { mapModelContent } from './repository.map';
-import { updateModelContent } from './repository.update';
-import { addModelContent } from './repository.add';
-import { getMultipleModelContent } from './repository.get.multiple.model';
-import { getSingleModelContent } from './repository.get.single.model';
+import { mapModelContent } from './repository.content.map';
+import { updateModelContent } from './repository.content.update';
+import { addModelContent } from './repository.content.add';
+import { getMultipleModelContent } from './repository.content.get.multiple';
+import { getSingleModelContent } from './repository.content.get.single';
 import { Table } from "../orm.interface.config";
 import { indent } from '../orm.utils';
-import { deleteModelContent } from './repository.delete';
+import { deleteModelContent } from './repository.content.delete';
 
 const getRepositoryContent = (table: Table): string => 
     `${getSingleModelContent(table.name)}\n` +

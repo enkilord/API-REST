@@ -7,6 +7,7 @@ const register = async(req: Request, res: Response) => {
     const userRepo = new UserRepository();
 
     const username = req.body.username;
+    const password = req.body.password;
 
     var user: User = await userRepo.findBy({name: 'username', value: username});
 
@@ -14,7 +15,7 @@ const register = async(req: Request, res: Response) => {
 
     if (user !== undefined) return res.sendStatus(403);
 
-    if (req.body.password === undefined) return res.sendStatus(401);
+    if (password === undefined) return res.sendStatus(401);
 
     user = new User(
         2,
@@ -25,12 +26,7 @@ const register = async(req: Request, res: Response) => {
         0
     );
 
-    const dbRes = await userRepo.add(user);
-
-    console.log(dbRes);
-    
-    return res.send(dbRes);
-    // return res.send(await userRepo.find(dbRes.insertId));
+    return res.send(await userRepo.add(user));
 };
 
 const login = (req: Request, res: Response) => {    

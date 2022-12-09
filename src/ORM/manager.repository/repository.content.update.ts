@@ -1,5 +1,5 @@
-import { indent } from './../orm.utils';
-import { Table } from './../orm.interface.config';
+import { indent } from '../orm.utils';
+import { Table } from '../orm.interface.config';
 
 export const updateModelContent = (tableName: string): string => 
     `${indent()}update = async(model: ${tableName}): Promise<${tableName}> => {\n` +
