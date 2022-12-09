@@ -1,3 +1,4 @@
+import { Request, Response } from 'express';
 import { defaultRoutesManager } from './route.default';
 
 const defaultRoutes: string[] = [
@@ -6,9 +7,7 @@ const defaultRoutes: string[] = [
     '/users'
 ];
 
-export const routeManager = (req: any, res: any, next: any) => {
-    console.log(req.url);
-
+export const routeManager = (req: Request, res: Response) => {
     if (defaultRoutes.includes(req.url)) {
         defaultRoutesManager(req, res);
     }

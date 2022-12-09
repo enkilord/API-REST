@@ -9,7 +9,7 @@ const initialize = async () => {
     // database
     console.log('Initializing Database\n');
 
-    await initializeDataBase(ormConfig.tables);
+    // await initializeDataBase(ormConfig.tables);
 
     // models
     console.log('\nInitializing Model\n');
