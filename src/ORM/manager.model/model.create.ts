@@ -1,27 +1,6 @@
 import { Table, Parameter } from '../orm.interface.config';
 import { indent } from '../orm.utils';
 
-const getSetParameter = (parameter: Parameter): string =>
-`${indent()}set ${parameter.name}(_${parameter.name}: ${parameter.js_type}) {\n` +
-`${indent()}${indent()}this.${parameter.name} = _${parameter.name}\n` +
-`${indent()}}`;
-
-const getGetParameter = (parameter: Parameter): string =>
-`${indent()}get ${parameter.name}(): ${parameter.js_type} {\n` +
-`${indent()}${indent()}return this.${parameter.name}\n` +
-`${indent()}}`;
-
-const getModelContent = (parameters: Parameter[]): string => {
-    var modelContent = '';
-
-    parameters.forEach((parameter) => {
-        modelContent += `\n${getSetParameter(parameter)}\n`;
-        modelContent += `\n${getGetParameter(parameter)}\n`;
-    });
-
-    return modelContent;
-};
-
 const getConstructorContent = (table: Table): string => {
     const constructorContent = `${indent()}constructor (\n`;
 
@@ -53,4 +32,3 @@ export const createModelContent = (table: Table): string =>
     `${getParameterContent(table.parameters)}\n` +
     `${getConstructorContent(table)}\n` +
     `}`;
-    // `${getModelContent(table.parameters)}}`;

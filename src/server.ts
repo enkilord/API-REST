@@ -1,4 +1,4 @@
-import { routeManager } from './routes/route';
+import { routeManager } from './routes/route.manager';
 import express from 'express';
 import compression from 'compression';
 import helmet from 'helmet';

@@ -19,7 +19,7 @@ export const execute = (query: string): Promise<any> => {
     var res: any;
 
     return new Promise<any>((resolve, reject) => {
-        conn.query(query, (err, result, fields) => {
+        conn.query(query, (err, result) => {
             if (err) {
                 return reject(err);
             }

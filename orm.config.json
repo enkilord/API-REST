@@ -10,6 +10,20 @@
                     "nullable": false,
                     "foreign_key": ""
                 }
+            ],
+            "routes" : [
+                {
+                    "name": "/roles/(?<Id>\\d+)",
+                    "method": "GET",
+                    "require_auth": false,
+                    "invoke": "getRole"
+                },
+                {
+                    "name": "/roles",
+                    "method": "GET",
+                    "require_auth": false,
+                    "invoke": "getAllRole"
+                }
             ]
         },
         {
@@ -50,6 +64,50 @@
                     "nullable": true,
                     "foreign_key": ""
                 }
+            ],
+            "routes" : [
+                {
+                    "name": "/register",
+                    "method": "POST",
+                    "require_auth": false,
+                    "invoke": "register"
+                },
+                {
+                    "name": "/login",
+                    "method": "POST",
+                    "require_auth": false,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/me",
+                    "method": "GET",
+                    "require_auth": true,
+                    "invoke": "getUser"
+                },
+                {
+                    "name": "/users",
+                    "method": "GET",
+                    "require_auth": false,
+                    "invoke": "getAllUser"
+                },
+                {
+                    "name": "/user/(?<Id>\\d+)",
+                    "method": "PUT",
+                    "require_auth": true,
+                    "invoke": "updateUser"
+                },
+                {
+                    "name": "/user/(?<Id>\\d+)",
+                    "method": "GET",
+                    "require_auth": true,
+                    "invoke": "getUser"
+                },
+                {
+                    "name": "/user/(?<Id>\\d+)",
+                    "method": "DELETE",
+                    "require_auth": true,
+                    "invoke": "deleteUser"
+                }
             ]
         },
         {
@@ -75,6 +133,44 @@
                     "js_type": "string",
                     "nullable": false,
                     "foreign_key": ""
+                }
+            ],
+            "routes" : [
+                {
+                    "name": "/product/create",
+                    "method": "POST",
+                    "require_auth": true,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/product/(?<Id>\\d+)",
+                    "method": "GET",
+                    "require_auth": true,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/product/(?<Id>\\d+)",
+                    "method": "PUT",
+                    "require_auth": true,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/product/(?<Id>\\d+)",
+                    "method": "DELETE",
+                    "require_auth": true,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/products",
+                    "method": "GET",
+                    "require_auth": false,
+                    "invoke": "login"
+                },
+                {
+                    "name": "/products/(?<UserId>\\d+)",
+                    "method": "GET",
+                    "require_auth": false,
+                    "invoke": "login"
                 }
             ]
         }

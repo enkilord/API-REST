@@ -1,4 +1,5 @@
-require("dotenv").con
+require("dotenv").con;
+
 export const DATA_SOURCES = {
     mySqlDataSource: {
         HOST: process.env.MY_SQL_DB_HOST,

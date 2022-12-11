@@ -1,7 +1,7 @@
-import { debug } from 'console';
 import { Request, Response } from 'express';
 import { User } from '../models/User';
 import { UserRepository } from '../repositories/User.repository';
+import { hashPassword } from '../utils/hasher.password';
 
 const register = async(req: Request, res: Response) => {    
     const userRepo = new UserRepository();
@@ -11,8 +11,6 @@ const register = async(req: Request, res: Response) => {
 
     var user: User = await userRepo.findBy({name: 'username', value: username});
 
-    console.log(user);
-
     if (user !== undefined) return res.sendStatus(403);
 
     if (password === undefined) return res.sendStatus(401);
@@ -20,7 +18,7 @@ const register = async(req: Request, res: Response) => {
     user = new User(
         2,
         username,
-        req.body.password,
+        hashPassword(password),
         req.body.email,
         req.body.adresse,
         0
@@ -30,12 +28,10 @@ const register = async(req: Request, res: Response) => {
 };
 
 const login = (req: Request, res: Response) => {    
-    console.log(req.body);
 
 };
 
 const getUsers = (req: Request, res: Response) => {    
-    console.log(req.body);
     
 };
 
@@ -43,11 +39,14 @@ export const defaultRoutesManager = (req: Request, res: Response): any => {
     switch (req.url) {
         case '/register':
             register(req, res);
+            break;
 
         case '/login':
             login(req, res);
+            break;
 
         case '/users':
             getUsers(req, res);
+            break;
     };
 };
