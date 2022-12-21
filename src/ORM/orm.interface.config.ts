@@ -2,7 +2,7 @@ export interface Route {
     name: string,
     method: string,
     require_auth: boolean,
-    invoke: string,
+    invoke_method: string,
 }
 
 export interface Parameter {

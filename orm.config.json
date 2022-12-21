@@ -13,16 +13,16 @@
             ],
             "routes" : [
                 {
-                    "name": "/roles/(?<Id>\\d+)",
+                    "uri": "/roles/(?<Id>\\d+)",
                     "method": "GET",
                     "require_auth": false,
-                    "invoke": "getRole"
+                    "invoke_method": "getRole"
                 },
                 {
-                    "name": "/roles",
+                    "uri": "/roles",
                     "method": "GET",
                     "require_auth": false,
-                    "invoke": "getAllRole"
+                    "invoke_method": "getAllRole"
                 }
             ]
         },
@@ -67,46 +67,46 @@
             ],
             "routes" : [
                 {
-                    "name": "/register",
+                    "uri": "/register",
                     "method": "POST",
                     "require_auth": false,
-                    "invoke": "register"
+                    "invoke_method": "register"
                 },
                 {
-                    "name": "/login",
+                    "uri": "/login",
                     "method": "POST",
                     "require_auth": false,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/me",
+                    "uri": "/me",
                     "method": "GET",
                     "require_auth": true,
-                    "invoke": "getUser"
+                    "invoke_method": "getUser"
                 },
                 {
-                    "name": "/users",
+                    "uri": "/users",
                     "method": "GET",
                     "require_auth": false,
-                    "invoke": "getAllUser"
+                    "invoke_method": "getAllUser"
                 },
                 {
-                    "name": "/user/(?<Id>\\d+)",
+                    "uri": "/user/(?<Id>\\d+)",
                     "method": "PUT",
                     "require_auth": true,
-                    "invoke": "updateUser"
+                    "invoke_method": "updateUser"
                 },
                 {
-                    "name": "/user/(?<Id>\\d+)",
+                    "uri": "/user/(?<Id>\\d+)",
                     "method": "GET",
                     "require_auth": true,
-                    "invoke": "getUser"
+                    "invoke_method": "getUser"
                 },
                 {
-                    "name": "/user/(?<Id>\\d+)",
+                    "uri": "/user/(?<Id>\\d+)",
                     "method": "DELETE",
                     "require_auth": true,
-                    "invoke": "deleteUser"
+                    "invoke_method": "deleteUser"
                 }
             ]
         },
@@ -137,40 +137,40 @@
             ],
             "routes" : [
                 {
-                    "name": "/product/create",
+                    "uri": "/product/create",
                     "method": "POST",
                     "require_auth": true,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/product/(?<Id>\\d+)",
+                    "uri": "/product/(?<Id>\\d+)",
                     "method": "GET",
                     "require_auth": true,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/product/(?<Id>\\d+)",
+                    "uri": "/product/(?<Id>\\d+)",
                     "method": "PUT",
                     "require_auth": true,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/product/(?<Id>\\d+)",
+                    "uri": "/product/(?<Id>\\d+)",
                     "method": "DELETE",
                     "require_auth": true,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/products",
+                    "uri": "/products",
                     "method": "GET",
                     "require_auth": false,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 },
                 {
-                    "name": "/products/(?<UserId>\\d+)",
+                    "uri": "/products/(?<UserId>\\d+)",
                     "method": "GET",
                     "require_auth": false,
-                    "invoke": "login"
+                    "invoke_method": "login"
                 }
             ]
         }

@@ -11,6 +11,7 @@ export const DATA_SOURCES = {
     },
     jwtDataSource: {
         KEY: process.env.JWT_KEY,
+        TTL: process.env.TTL,
         TOKEN_HEADER: process.env.JWT_TOKEN_HEADER,
     },
     pwdHasherDataSource: {
